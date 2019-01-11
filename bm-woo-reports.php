@@ -17,7 +17,7 @@ Text Domain: burtonmedia
   ==========================================================
   Exit if file is called directly
   ==========================================================
-*/  
+*/
 defined( 'ABSPATH' ) or die( 'Hey! Get outta here!' );
 
 /*
@@ -26,8 +26,8 @@ defined( 'ABSPATH' ) or die( 'Hey! Get outta here!' );
   =======================================================
 */
 function register_custom_menu_page() {
-    add_submenu_page( 
-        'woocommerce', 
+    add_submenu_page(
+        'woocommerce',
         __( 'Orders By Product', 'burtonmedia' ),
         'Orders by Product',
         'manage_options',
@@ -45,3 +45,12 @@ add_action( 'admin_menu', 'register_custom_menu_page' );
 function orders_by_product_page(){
     esc_html_e( 'Orders by Product', 'burtonmedia' );
 }
+
+/*
+ * STYLES
+*/
+function load_custom_wp_admin_style() {
+    wp_register_style( 'bm_report_css', plugins_url('css/styles.css', __FILE__));
+    wp_enqueue_style( 'bm_report_css' );
+}
+add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
