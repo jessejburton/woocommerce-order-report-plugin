@@ -1,2 +1,3 @@
-# bm-testimonials
-WordPress Plugin for adding testimonials to a website.
+# bm-woo-reports
+
+WordPress Plugin to display custom product order reports.
