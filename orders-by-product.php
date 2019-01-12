@@ -141,7 +141,7 @@
         </div>
 
         <div class="submit admin-buttons">
-            <input type="submit" value="View Orders" class="button-primary" name="Submit">
+            <input type="submit" id="submit" value="View Orders" class="button-primary" name="Submit" disabled>
         </div>
     </form>
 
