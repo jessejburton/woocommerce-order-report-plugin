@@ -1,0 +1,126 @@
+.header {
+    height: 100vh;
+
+    .header__text-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+
+        .heading-primary {
+            text-transform: uppercase;
+
+            backface-visibility: hidden;
+            margin-bottom: 10rem;
+
+            .heading-primary--main {
+                display: block;
+                font-size: 6rem;
+                font-weight: 400;
+                letter-spacing: 3.8rem;
+                text-indent: 1.9rem;
+
+                animation-name: moveInLeft;
+                animation-duration: 1s;
+                padding-bottom: 2rem;
+
+                @include respond(600px) {
+                    font-size: 5rem;
+                }
+
+                @include respond(550px) {
+                    font-size: 3rem;
+                }
+
+                @include respond(1120px) {
+                    letter-spacing: 1rem;
+                }
+            }
+
+            .heading-primary--sub {
+                display: block;
+                font-size: 2rem;
+                font-weight: 700;
+                letter-spacing: 1.3rem;
+
+                animation-name: moveInRight;
+                animation-duration: 1s;
+                padding-top: 2rem;
+
+                @include respond($tablet) {
+                    letter-spacing: 0.5rem;
+                    font-size: 2.5rem;
+                }
+
+                @include respond($phone) {
+                    font-size: 1.5rem;
+                }
+            }
+
+            .heading-primary--line {
+                display: block;
+                width: 94%;
+                height: 3px;
+                background-image: radial-gradient(
+                    $color-primary-light,
+                    $color-primary-dark
+                );
+                margin: -2rem auto 0 auto;
+                animation-name: expandWidth;
+                animation-duration: 1s;
+                animation-delay: 1s;
+                animation-fill-mode: backwards;
+            }
+        }
+        .header__contact a,
+        .header__contact a:link {
+            font-size: 3.5rem;
+            color: $color-secondary-light;
+            margin: 0 0.5rem;
+            transition: all 0.5s;
+            display: inline-block;
+            position: relative;
+            animation-name: fadeIn;
+            animation-duration: 2s;
+            animation-delay: 0.5s;
+            animation-fill-mode: backwards;
+            &:hover {
+                text-shadow: 3px 3px 16px #272634;
+                transform: scale(1.1);
+                color: $color-primary;
+            }
+        }
+    }
+}
+.header-page {
+    max-width: 32rem;
+    margin: 0 auto;
+    text-align: center;
+    .heading-page--main,
+    .heading-page--sub {
+        color: $color-secondary-light;
+        font-weight: 300;
+    }
+    .heading-page--main {
+        font-size: 4rem;
+        letter-spacing: 0.1rem;
+    }
+    .heading-page--sub {
+        font-size: 2rem;
+        letter-spacing: 0.1rem;
+        padding-top: 1rem;
+    }
+    .heading-page--line {
+        display: block;
+        height: 2px;
+        background-image: radial-gradient(
+            $color-primary-light,
+            $color-primary-dark
+        );
+        animation-name: expandWidth;
+        animation-duration: 1s;
+        animation-delay: 1s;
+        animation-fill-mode: backwards;
+    }
+}

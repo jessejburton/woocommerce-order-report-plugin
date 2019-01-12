@@ -1,0 +1,52 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    // This defines what 1rem is
+    font-size: 62.5%; // 1 rem = 10px; 10px/16px = 62.5% ( 16 is the typical default font-size )
+
+    @include respond($tablet-wide){
+        font-size: 56.25%;
+    }
+
+    @include respond($phone){
+        font-size: 50%;
+    }
+
+    @include respond($tablet){
+        font-size: 50%;
+    }
+
+}
+
+body {
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+    font-weight: 400px;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: $default-font-color;    
+}
+
+.background-primary {
+    @include gradient-background-primary;
+    color: $color-primary-text;
+}
+
+.background-secondary {
+    @include gradient-background-secondary;
+    color: $color-secondary-text;
+}
+
+/*  
+    I am setting up the main paragraph and list stylings based on mixins so that they are easy to update. 
+    If you want to adjust the styling for the theme simply update the mixins in abstracts/mixing.scss
+*/
+main p {
+    @include paragraph;
+}

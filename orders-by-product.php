@@ -31,13 +31,11 @@
     <h1>Orders by Product</h1>
 
     <form method="post">
-        <p>
-            <strong>Select the products to view:</strong> <br />
-            <small>* hold down ctrl or shift to select multiple</small>
-        </p>
 
-        <p>
-            <select class="product-select" id="product" name="product[]" multiple size="8">
+        <div class="product filter-group filter-group-full">
+            <p><strong>Select the products to view:</strong></p>
+
+            <select class="product__select" id="product" name="product[]" multiple size="8">
                 <?php
                     $count = 0;
                     foreach ($products as $product) {
@@ -56,18 +54,20 @@
                             </option>
                 <?php } ?>
             </select>
-        </p>
+
+            <small>* hold down ctrl or shift to select multiple</small>
+        </div>
 
         <!-- FILTERS -->
-        <h2 class="filters__heading">Filters</h2>
-
         <div class="filters">
 
+            <h2 class="filters__heading">Filters</h2>
+
             <!-- DATES -->
-            <div class="filter-group filters__date">
-                <strong>Order Date:</strong><br />
+            <div class="filter-group filters-date">
+                <p><strong>Order Date:</strong></p>
                 <p>
-                    <label for="start_date">Start Date</label>
+                    <label class="filters-date__label" for="start_date">Start Date</label><br />
                     <input
                         type="date"
                         name="start_date"
@@ -77,7 +77,7 @@
                     />
                 </p>
                 <p>
-                    <label for="end_date">End Date</label>
+                    <label class="filters-date__label" for="end_date">End Date</label><br />
                     <input
                         type="date"
                         name="end_date"
@@ -90,8 +90,8 @@
 
             <!-- STATUS -->
             <div class="filter-group filters__status">
-                <strong>Order Status:</strong><br />
-                <select class="status-select" id="status" name="status[]" multiple size="7">
+                <p><strong>Order Status:</strong></p>
+                <select class="filter-status__select" id="status" name="status[]" multiple size="7">
                     <?php
                         foreach ($order_status as $status) { ?>
                             <option
@@ -111,8 +111,8 @@
 
             <!-- COUNTRY -->
             <div class="filter-group filters__country">
-                <strong>Country:</strong><br />
-                <select class="status-select" id="country" name="country[]" multiple size="7">
+                <p><strong>Country:</strong></p>
+                <select class="filter-country__select" id="country" name="country[]" multiple size="7">
                     <?php
                         $count = 0;
                         foreach ($countries as $country) {
@@ -229,7 +229,7 @@ if(sizeof($_POST) !== 0 && sizeof($_POST['product']) > 0){
     <h2>Showing <?php echo sizeof($filtered_result); ?> Order<?php echo sizeof($filtered_result) === 1 ? '' : 's'; ?>:</h2>
     <p><a href="<?php echo plugins_url("bm-woo-reports") . "/output/orders-by-product.csv"; ?>" target="_blank">Export CSV</a></p>
 
-    <table class="widefat fixed" cellspacing="0">
+    <table class="report-table widefat fixed" cellspacing="0">
         <thead>
             <tr>
                 <th style="width: 60px;">Order #</th>

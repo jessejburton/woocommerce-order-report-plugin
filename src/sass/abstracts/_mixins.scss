@@ -1,0 +1,95 @@
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin margin-bottom-small {
+    margin-bottom: 1rem;
+}
+@mixin margin-bottom-medium {
+    margin-bottom: 2rem;
+}
+@mixin margin-bottom-large {
+    margin-bottom: 4rem;
+}
+
+@mixin drop-shadow {
+    box-shadow: 0 1rem 3rem rgba($color-black, 0.25);
+}
+
+@mixin gradient-background-primary {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary, 1),
+        rgba($color-primary-dark, 1)
+    );
+}
+
+@mixin gradient-background-secondary {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-grey-light-1, 1),
+        rgba($color-grey-light-2, 1)
+    );
+}
+
+/* Content stylings */
+@mixin paragraph {
+    /* I am setting the bottom margin to 20px (2 rem) on all paragraphs that aren't the last-child */
+    &:not(last-child) {
+        margin-bottom: 2rem;
+    }
+}
+
+@mixin lists {
+    padding-left: 5rem;
+    margin: 2rem 0;
+}
+
+/* 
+    MEDIA QUERY MANAGER (DESKTOP FIRST APPROACH)
+
+    in pixels
+    0 - 600         Phone ($phone)
+    600 - 900       Tablet Portrait ($tablet)
+    900 - 1200      Tablet Landscape ($tablet-wide)
+    [1200 - 1800]   Regular Desktop Styles Apply
+
+    ORDER OF MEDIA QUERIES: 
+        base + typography
+        general layout + grid
+        page layout
+        components
+
+*/
+
+@mixin respond($breakpoint) {
+    @media (max-width: $breakpoint) {
+        @content;
+    }
+}
+
+/* Switched this to be above and below to add more flexibility */
+@mixin above($breakpoint) {
+    @media (min-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin below($breakpoint) {
+    @media (max-width: $breakpoint) {
+        @content;
+    }
+}
+
+/*
+    Could use an @if for this instead of variables 
+    but I like the variable approach better.
+
+    @if $breakpoint == phone {
+        @media (max-width: 600px) { @content; }
+    }
+*/

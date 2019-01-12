@@ -1,18 +1,5 @@
-.admin-wrapper {
-  padding-right: 20px;
-}
-
-.product-select,
-.status-select,
-.country-select {
-  width: 100%;
-}
-
-.filter-group {
-  height: 200px;
-}
-
-.admin-buttons {
-  clear: both;
-  padding: 20px 0;
-}
+@import 'components/admin.scss';
+@import 'components/filters.scss';
+@import 'components/report.scss';
+@import 'components/product.scss';
+@import 'components/select.scss';

@@ -1,0 +1,9 @@
+.u-text-center { text-align: center; margin: 0 auto; }
+.u-text-right { text-align: right; }
+.u-text-left { text-align: left; }
+
+.u-margin-top-bottom-small { margin-top: 1rem; margin-bottom: 1rem; }
+.u-margin-top-bottom-medium { margin-top: 2rem; margin-bottom: 4rem; }
+.u-margin-top-bottom-large { margin-top: 8rem; margin-bottom: 8rem; }
+
+.u-clearfix { @include clearfix; }

@@ -1,0 +1,73 @@
+[class^="section-"] {
+    overflow: hidden;
+}
+
+/* HOME PAGE - SERVICES SECTION */
+.section-services {
+    min-height: 0;
+}
+
+/* HOME PAGE - PROJECTS SECTION */
+.section-projects {
+    padding-bottom: 7rem;
+}
+
+/* HOME PAGE - SKILLS SECTION */
+.section-skills {
+    padding: 1rem 0 8rem 0;
+    text-align: center;
+}
+
+/* HOME PAGE - TESTIMONIAL SECTION */
+.section-testimonials {
+    position: relative;
+    padding: 7rem 0;
+
+    .clients {
+        margin-bottom: 5rem; // This adjusts the row margin for the clients
+    }
+
+    .clients__heading {
+        padding-bottom: 2rem;
+    }
+
+    .clients__logo {
+        vertical-align: middle;
+        opacity: 0.6;
+        transition: all 0.4s;
+        width: 17rem;
+        backface-visibility: hidden;
+
+        &:not(last-child) {
+            margin-right: 4rem;
+        }
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+/* HOME PAGE - CONTACT FORM SECTION */
+.section-contact {
+    padding: 15rem 0;
+
+    .contact {
+        background-image: linear-gradient(
+                to bottom,
+                rgba($color-white, 1) 0%,
+                rgba($color-white, 0.7) 100%
+            ),
+            url(../img/nat-10.jpg);
+        background-size: cover;
+        border-radius: $border-radius;
+        width: 80%;
+        margin: 0 auto;
+        background-color: $color-white;
+        @include drop-shadow;
+
+        &__form {
+            padding: 6rem;
+        }
+    }
+}

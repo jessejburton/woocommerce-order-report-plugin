@@ -1,0 +1,44 @@
+footer {
+    .footer {
+        padding: 3rem 0;
+        background-color: $color-grey-dark-3;
+        color: $color-grey-dark-2;
+
+        ul {
+            list-style: none;
+        }
+
+        a,
+        a:link,
+        a:visited {
+            color: $color-grey-dark-2;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: $color-grey-dark-1;
+        }
+
+        &__contact--social {
+            font-size: 2.5rem;
+        }
+
+        &__certification {
+            padding-top: 2rem;
+
+            a:link,
+            a:visited {
+                opacity: 0.6;
+            }
+
+            a:hover {
+                opacity: 0.3;
+            }
+        }
+
+        @include respond("1220px") {
+            padding: 3rem 15rem;
+        }
+    }
+}

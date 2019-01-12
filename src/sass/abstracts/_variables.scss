@@ -1,0 +1,52 @@
+// COLORS
+
+/* Primary Colors */
+$color-primary: #005596;
+$color-primary-light: #0063af;
+$color-primary-dark: #014375;
+$color-primary-text: #fff;
+
+/* Secondary Colors */
+$color-secondary-light: #777;
+$color-secondary-dark: #333;
+$color-secondary-text: #999;
+
+/* Tertiary Colors */
+$color-tertiary-light: #2998ff;
+$color-tertiary-dark: #5643fa;
+
+/* Greys */
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eee;
+$color-grey-light-3: #999;
+
+$color-grey-dark-1: #777;
+$color-grey-dark-2: #666;
+$color-grey-dark-3: #333;
+
+/* Validation */
+$color-success: #4c9a44;
+$color-warning: #9eb100;
+$color-error: #d02c2c;
+
+/* Black and White */
+$color-white: #fff;
+$color-black: #000;
+
+// FONT
+$default-font-size: 1.6rem;
+$default-font-color: #777; 
+
+// STYLING
+$border-radius: 3px;
+
+// GRID
+$grid-width: 114rem;   // 1140 pixels
+$gutter-vertical: 8rem;
+$gutter-vertical-small: 6rem;
+$gutter-horizontal: 6rem;
+
+// BREAKPOINTS
+$phone: 600px;
+$tablet: 900px;
+$tablet-wide: 1200px;

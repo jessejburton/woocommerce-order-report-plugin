@@ -1,14 +1,38 @@
 .admin-wrapper {
   padding-right: 20px; }
-
-.product-select,
-.status-select,
-.country-select {
-  width: 100%; }
-
-.filter-group {
-  height: 200px; }
+  .admin-wrapper p {
+    margin-top: 0 !important; }
 
 .admin-buttons {
   clear: both;
   padding: 20px 0; }
+
+.filters__heading {
+  clear: both;
+  padding: 20px 0 0 0; }
+
+.filters::after {
+  content: '';
+  clear: both;
+  display: table; }
+
+.filter-group {
+  height: 200px;
+  padding: 10px; }
+  .filter-group-full {
+    width: 100%;
+    height: auto; }
+
+.filters-date__label {
+  font-size: 10px; }
+
+.product::after {
+  content: '';
+  clear: both;
+  display: table; }
+
+.product__select,
+.filter-status__select,
+.filter-country__select {
+  width: 100%;
+  outline: 0; }

@@ -1,0 +1,26 @@
+.filters {
+  &__heading {
+    clear: both;
+    padding: 20px 0 0 0;
+  }
+
+  &::after {
+    content: '';
+    clear: both;
+    display: table;
+  }
+}
+
+.filter-group {
+  height: 200px;
+  padding: 10px;
+
+  &-full {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.filters-date__label {
+  font-size: 10px;
+}
