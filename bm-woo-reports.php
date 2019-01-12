@@ -50,10 +50,10 @@ function orders_by_product_page(){
  * STYLES & SCRIPTS
 */
 function load_custom_wp_admin_style() {
-    wp_register_style( 'bm_report_css', plugins_url('css/styles.css', __FILE__) );
+    wp_register_style( 'bm_report_css', plugins_url('public/css/styles.css', __FILE__) );
     wp_enqueue_style( 'bm_report_css' );
 
-    wp_register_script( 'bm_report_js', plugins_url('js/script.js', __FILE__) );
+    wp_register_script( 'bm_report_js', plugins_url('public/js/script.js', __FILE__) );
     wp_enqueue_script( 'bm_report_js', '', '', '', true );
 }
 add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
