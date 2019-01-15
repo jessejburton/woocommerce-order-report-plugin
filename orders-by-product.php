@@ -124,8 +124,7 @@
                                     <?php
                                         if(
                                             (
-                                                sizeof($_POST) === 0 &&
-                                                ($id === 'CA' || $id === 'US')
+                                                sizeof($_POST) === 0 // Select all by default
                                             ) || (
                                                 isset($_POST['country']) &&
                                                 in_array($id, $_POST["country"])
