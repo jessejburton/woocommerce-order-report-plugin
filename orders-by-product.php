@@ -226,7 +226,7 @@ if(sizeof($_POST) !== 0 && sizeof($_POST['product']) > 0){
     ?>
 
     <h2>Showing <?php echo sizeof($filtered_result); ?> Order<?php echo sizeof($filtered_result) === 1 ? '' : 's'; ?>:</h2>
-    <p><a href="<?php echo plugins_url("bm-woo-reports") . "/output/orders-by-product.csv"; ?>" target="_blank">Export CSV</a></p>
+    <p><a href="<?php echo plugins_url("bm-woo-reports") . "/output/orders-by-product.csv?" . uniqid(); ?>" target="_blank">Export CSV</a></p>
 
     <table class="report-table widefat fixed" cellspacing="0">
         <thead>
@@ -331,13 +331,11 @@ foreach($filtered_result as $order_result){
       $product_price  = $product->get_price();
       $stock_quantity = $product->get_stock_quantity();
 
-      setlocale(LC_MONETARY, 'en_US');
-
       array_push($order_details, $product_name);
       array_push($order_details, $quantity);
-      array_push($order_details, money_format('%i', $line_total));
-      array_push($order_details, money_format('%i', $line_total_tax));
-      array_push($order_details, money_format('%i', ($line_total + $line_total_tax)));
+      array_push($order_details, number_format($line_total, 2, '.', ''));
+      array_push($order_details, number_format($line_total_tax, 2, '.', ''));
+      array_push($order_details, number_format(($line_total + $line_total_tax), 2, '.', ''));
 
   endforeach;
 
